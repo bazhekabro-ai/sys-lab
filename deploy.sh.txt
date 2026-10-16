@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "=== Остановка старого контейнера ==="
+docker stop sys-app-container 2>/dev/null || true
+docker rm sys-app-container 2>/dev/null || true
+
+echo "=== Запуск нового контейнера ==="
+docker run -d -p 8000:8000 --name sys-app-container --restart always my-sys-app:latest
+
+echo "=== Готово! Сайт доступен на http://localhost:8000 ==="

@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "=== Сборка Docker-образа ==="
+docker build -t my-sys-app:latest .
+echo "=== Сборка завершена успешно ==="
